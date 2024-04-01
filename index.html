@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SCH Dice Roller</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1>SCH Dice Roller</h1>
@@ -15,47 +16,40 @@
 <label for="homeControlNum">Enter Home Control Number:</label>
 <input type="number" id="homeControlNum"><br> 
 <button onclick="rollDice()">Roll Dice</button>
-<p id="output"></p>
+  <p id="output" class="output"></p>
 <script src="script.js"></script>
 <script>
-function rollDice() {
-    const puckBattleNum = parseInt(document.getElementById("puckBattleNum").value);
-const homeControlNum = parseInt(document.getElementById("homeControlNum").value);  
-    const yellowResult = rollYellowDie();
-    const redResult = rollRedDie();
-    const blueResult = rollBlueDie();
-    const whiteResult = rollWhiteDie();
-    const blackResult = rollBlackDie();
-    const greyResult = rollGreyDie();
-    const blackishResult = rollBlackishDie();
-    const grimiResult = rollGreyishDie();
-    const extraD6Result = rollExtraD6();
-    const extraD20Result = rollExtraD20();
-    const combineResult = blackResult + greyResult;
-    const combineResult2 = blackishResult + grimiResult;
-      let message = "PUCK BATTLE RESULT: " + yellowResult + "<br>" + whiteResult + " Minutes"+"<br>";
-    if (puckBattleNum <= yellowResult) {
-        message += "PUCK BATTLE";
-    } else if 
-         (redResult >= homeControlNum) {
+  function rollDice() {
+      const puckBattleNum = parseInt(document.getElementById("puckBattleNum").value);
+      const homeControlNum = parseInt(document.getElementById("homeControlNum").value);
+      const yellowResult = rollYellowDie();
+      const redResult = rollRedDie();
+      const blueResult = rollBlueDie();
+      const whiteResult = rollWhiteDie();
+      const blackResult = rollBlackDie();
+      const greyResult = rollGreyDie();
+      const blackishResult = rollBlackishDie();
+      const grimiResult = rollGreyishDie();
+      const extraD6Result = rollExtraD6();
+      const extraD20Result = rollExtraD20();
+      const combineResult = blackResult + greyResult;
+      const combineResult2 = blackishResult + grimiResult;
+      let message = "PUCK BATTLE RESULT: " + yellowResult + "<br>" + whiteResult + " Minutes" + "<br>";
+      if (puckBattleNum <= yellowResult) {
+          message += "PUCK BATTLE";
+      } else if (redResult >= homeControlNum) {
           message += "HOME ATTACK";
-         } else {
+      } else {
           message += "AWAY ATTACK";
-          }
-        
-  
-    message += "<br><br>CONTROL DIE: " + redResult + "<br>";
-    message +="DEFENSE DIE: " + blueResult + "<br>";
-    message +="RESULT 1: " + combineResult2 + "<br>"
-    message += "RESULT 2: " + combineResult + "<br>";
-    message += "EXTRA D6: " + extraD6Result + "<br>";
-    message += "EXTRA D20: " + extraD20Result + "<br>";
-    document.getElementById("output").innerHTML = message;
-
-  
-    
-
-}
+      }
+      message += "<br><br>CONTROL DIE: " + redResult + "<br>";
+      message +="DEFENSE DIE: " + blueResult + "<br>";
+      message +="RESULT 1: " + combineResult2 + "<br>"
+      message += "RESULT 2: " + combineResult + "<br>";
+      message += "EXTRA D6: " + extraD6Result + "<br>";
+      message += "EXTRA D20: " + extraD20Result + "<br>";
+      document.getElementById("output").innerHTML = message;
+  }
 </script>
 </body>
 </html>
