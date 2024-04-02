@@ -36,16 +36,18 @@
       const combineResult2 = blackishResult + grimiResult;
       let message = "PUCK BATTLE RESULT: " + yellowResult + "<br>" + whiteResult + " Minutes" + "<br>";
       if (puckBattleNum <= yellowResult) {
-          message += "PUCK BATTLE";
+          message += "<span style='color: brown;'>PUCK BATTLE </span><br>";
       } else if (redResult >= homeControlNum) {
-          message += "HOME ATTACK";
+          message += "<span style='color: red;'>HOME ATTACK </span><br>";
       } else {
-          message += "AWAY ATTACK";
+          message += "<span style='color: blue;'>AWAY ATTACK </span><br>";
       }
       message += "<br><br>CONTROL DIE: " + redResult + "<br>";
       message +="DEFENSE DIE: " + blueResult + "<br>";
-      message +="RESULT 1: " + combineResult2 + "<br>"
-      message += "RESULT 2: " + combineResult + "<br>";
+      message +="RESULT 1: <span style='color: blue;'>" + 
+      combineResult2 + "</span><br>"
+      message += "RESULT 2: <span style='color: red;'>" +     
+      combineResult + "</span><br>";
       message += "EXTRA D6: " + extraD6Result + "<br>";
       message += "EXTRA D20: " + extraD20Result + "<br>";
       document.getElementById("output").innerHTML = message;
